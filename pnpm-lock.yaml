@@ -16,6 +16,9 @@ importers:
       '@nyxb/picocolors':
         specifier: ^1.0.2
         version: 1.0.2
+      '@tyck/prompts':
+        specifier: ^0.0.2
+        version: 0.0.2
       '@types/babel__core':
         specifier: ^7.20.0
         version: 7.20.0
@@ -46,6 +49,9 @@ importers:
       buildkarium:
         specifier: ^0.0.2
         version: 0.0.2(@types/node@18.15.11)(eslint@8.41.0)
+      consolji:
+        specifier: ^0.1.4
+        version: 0.1.4
       dynot:
         specifier: ^0.1.8
         version: 0.1.8
@@ -1401,6 +1407,23 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
     dev: true
+
+  /@tyck/core@0.0.1:
+    resolution: {integrity: sha512-ahfiuzFEzaHc5lhn6Wj2pEyMGxvlMhCWrSYwtOuyr7xFhT76cSrhJV4E6KpEzHvQ+K9EcXqW3DFxTUQSRvJL4g==}
+    dependencies:
+      '@nyxb/picocolors': 1.0.2
+      sisteransi: 1.0.5
+    dev: true
+
+  /@tyck/prompts@0.0.2:
+    resolution: {integrity: sha512-23ivX7ZdeZOlA+AzBgmYOQutqB2KBxJ06rCaOK4RlwlE4ZmZC4CEJXLFx15XFeuEtB7Vqb4nBWi1YCw9reIGOg==}
+    dependencies:
+      '@nyxb/picocolors': 1.0.2
+      '@tyck/core': 0.0.1
+      sisteransi: 1.0.5
+    dev: true
+    bundledDependencies:
+      - is-unicode-supported
 
   /@types/babel__core@7.20.0:
     resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}
