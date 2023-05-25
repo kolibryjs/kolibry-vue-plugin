@@ -1,0 +1,49 @@
+{
+  "name": "@kolibryjs/vue-jsx-plugin",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
+  "homepage": "https://github.com/kolibryjs/kolibry-vue-plugin/tree/main/packages/vue-jsx-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolibryjs/kolibry-vue-plugin.git",
+    "directory": "packages/vue-jsx-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/kolibryjs/kolibry-vue-plugin/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "buildkarium --stub",
+    "build": "buildkarium && nyxr patch-cjs",
+    "patch-cjs": "dynot ../../scripts/patchCJS.ts",
+    "prepublishOnly": "nyxr build"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/plugin-transform-typescript": "^7.21.3",
+    "@vue/babel-plugin-jsx": "^1.1.1"
+  },
+  "devDependencies": {
+    "kolibry": "^0.0.2"
+  },
+  "peerDependencies": {
+    "kolibry": "^0.0.2",
+    "vue": "^3.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

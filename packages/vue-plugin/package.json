@@ -1,0 +1,51 @@
+{
+  "name": "@kolibryjs/vue-plugin",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
+  "homepage": "https://github.com/kolibryjs/kolibry-vue-plugin/tree/main/packages/vue-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolibryjs/kolibry-vue-plugin.git",
+    "directory": "packages/plugin-vue"
+  },
+  "bugs": {
+    "url": "https://github.com/kolibryjs/kolibry-vue-plugin/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "buildkarium --stub",
+    "build": "buildkarium && nyxr patch-cjs",
+    "patch-cjs": "dynot ../../scripts/patchCJS.ts",
+    "prepublishOnly": "nyxr build"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "peerDependencies": {
+    "kolibry": "^0.0.2",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@jridgewell/gen-mapping": "^0.3.2",
+    "@jridgewell/trace-mapping": "^0.3.17",
+    "debug": "^4.3.4",
+    "rollup": "^3.17.2",
+    "slash": "^5.0.0",
+    "source-map": "^0.6.1",
+    "kolibry": "^0.0.2",
+    "vue": "^3.3.0-beta.5"
+  },
+  "files": [
+    "dist"
+  ]
+}
