@@ -1,0 +1,6 @@
+{
+  "name": "@kolibryjs/dep-import-type-test",
+  "private": true,
+  "version": "0.0.0",
+  "main": "index.js"
+}
