@@ -1,0 +1,17 @@
+{
+  "name": "@kolibryjs/vue-lib-test",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev-consumer": "kolibry --config ./kolibry.config.consumer.ts",
+    "build-lib": "kolibry build --config ./kolibry.config.lib.ts",
+    "build-lib-css": "kolibry build --config ./kolibry.config.lib-css.ts",
+    "build-consumer": "kolibry build --config ./kolibry.config.consumer.ts"
+  },
+  "dependencies": {
+    "vue": "^3.3.0-beta.5"
+  },
+  "devDependencies": {
+    "@kolibryjs/vue-plugin": "workspace:*"
+  }
+}
