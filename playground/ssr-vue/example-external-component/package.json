@@ -1,0 +1,7 @@
+{
+  "name": "@kolibryjs/example-external-component-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js"
+}

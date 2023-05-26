@@ -1,0 +1,12 @@
+{
+  "name": "@kolibryjs/kolibry-playground",
+  "private": true,
+  "version": "0.0.1",
+  "devDependencies": {
+    "convert-source-map": "^2.0.0",
+    "css-color-names": "^1.0.1",
+    "kill-port": "^1.6.1",
+    "fetch-for-all": "^0.0.3",
+    "sirv": "^2.0.2"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@kolibry/vue-test",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "kolibry",
+    "build": "kolibry build",
+    "debug": "node --inspect-brk kolibry",
+    "preview": "kolibry preview"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "vue": "^3.3.0-beta.5"
+  },
+  "devDependencies": {
+    "@kolibryjs/vue-plugin": "workspace:*",
+    "js-yaml": "^4.1.0",
+    "less": "^4.1.3",
+    "pug": "^3.0.2",
+    "sass": "^1.60.0",
+    "stylus": "^0.59.0"
+  }
+}
