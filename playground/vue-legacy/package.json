@@ -1,0 +1,18 @@
+{
+  "name": "@kolibryjs/vue-legacy-test",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "kolibry",
+    "build": "kolibry build",
+    "debug": "node --inspect-brk kolibry",
+    "preview": "kolibry preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.0-beta.5"
+  },
+  "devDependencies": {
+    "@kolibryjs/vue-plugin": "workspace:*",
+    "@kolibryjs/legacy-plugin": "^0.0.1"
+  }
+}
