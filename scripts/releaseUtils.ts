@@ -184,7 +184,7 @@ export async function getLatestTag(pkgName: string): Promise<string> {
    const tags = (await run('git', ['tag'], { stdio: 'pipe' })).stdout
       .split(/\n/)
       .filter(Boolean)
-   const prefix = pkgName === 'vite' ? 'v' : `${pkgName}@`
+   const prefix = pkgName === 'kolibry' ? 'v' : `${pkgName}@`
    return tags
       .filter(tag => tag.startsWith(prefix))
       .sort()
@@ -193,9 +193,9 @@ export async function getLatestTag(pkgName: string): Promise<string> {
 
 export async function getActiveVersion(pkgName: string): Promise<string> {
    const npmName
-    = pkgName === 'vite' || pkgName === 'create-vite'
-       ? pkgName
-       : `@vitejs/${pkgName}`
+      = pkgName === 'kolibry' || pkgName === 'create-kolibry'
+         ? pkgName
+         : `@kolibryjs/${pkgName}`
    return (await run('npm', ['info', npmName, 'version'], { stdio: 'pipe' }))
       .stdout
 }
@@ -230,13 +230,13 @@ export async function logRecentCommits(pkgName: string): Promise<void> {
 }
 
 export async function updateTemplateVersions(): Promise<void> {
-   const viteVersion = (
-      await fs.readJSON(path.resolve(__dirname, '../packages/vite/package.json'))
+   const kolibryVersion = (
+      await fs.readJSON(path.resolve(__dirname, '../packages/kolibry/package.json'))
    ).version
-   if (/beta|alpha|rc/.test(viteVersion))
+   if (/beta|alpha|rc/.test(kolibryVersion))
       return
 
-   const dir = path.resolve(__dirname, '../packages/create-vite')
+   const dir = path.resolve(__dirname, '../packages/create-kolibry')
 
    const templates = readdirSync(dir).filter(dir =>
       dir.startsWith('template-'),
@@ -244,9 +244,9 @@ export async function updateTemplateVersions(): Promise<void> {
    for (const template of templates) {
       const pkgPath = path.join(dir, template, 'package.json')
       const pkg = require(pkgPath)
-      pkg.devDependencies.vite = `^${viteVersion}`
+      pkg.devDependencies.kolibry = `^${kolibryVersion}`
       if (template.startsWith('template-vue')) {
-         pkg.devDependencies['@vitejs/plugin-vue']
+         pkg.devDependencies['@kolibryjs/vue-plugin']
         = `^${
          (
            await fs.readJSON(
@@ -255,7 +255,7 @@ export async function updateTemplateVersions(): Promise<void> {
         ).version}`
       }
       if (template.startsWith('template-react')) {
-         pkg.devDependencies['@vitejs/plugin-react']
+         pkg.devDependencies['@kolibryjs/react-plugin']
         = `^${
          (
            await fs.readJSON(

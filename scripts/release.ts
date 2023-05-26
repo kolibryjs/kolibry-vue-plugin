@@ -51,7 +51,7 @@ async function main(): Promise<void> {
    if (!semver.valid(targetVersion))
       throw new Error(`invalid target version: ${targetVersion}`)
 
-   const tag = pkgName === 'vite' ? `v${targetVersion}` : `${pkgName}@${targetVersion}`
+   const tag = pkgName === 'kolibry' ? `v${targetVersion}` : `${pkgName}@${targetVersion}`
 
    if (targetVersion.includes('beta') && !args.tag)
       args.tag = 'beta'
@@ -68,7 +68,7 @@ async function main(): Promise<void> {
 
    step('\nUpdating package version...')
    updateVersion(pkgPath, targetVersion)
-   if (pkgName === 'create-vite')
+   if (pkgName === 'create-kolibry')
       updateTemplateVersions()
 
    step('\nGenerating changelog...')
@@ -82,7 +82,7 @@ async function main(): Promise<void> {
       '--commit-path',
       '.',
    ]
-   if (pkgName !== 'vite')
+   if (pkgName !== 'kolibry')
       changelogArgs.push('--lerna-package', pkgName)
    await run('npx', changelogArgs, { cwd: pkgDir })
 
@@ -108,7 +108,7 @@ async function main(): Promise<void> {
    else {
       console.log(
          colors.green(
-            '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/vitejs/vite-plugin-vue/actions/workflows/publish.yml',
+            '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/kolibryjs/kolibry-vue-plugin/actions/workflows/publish.yml',
          ),
       )
    }
